@@ -1,30 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
-import axios from 'axios';
-import md5 from 'md5';
+import { getCharacters } from './services/marvelApi';
+import { CharactersData } from './types/character';
 
 // Important links:
 // Auth: https://developer.marvel.com/documentation/authorization
 // Entities/Endpoints: https://developer.marvel.com/documentation/entity_types
 // Image repo: https://developer.marvel.com/documentation/images
 
-const baseURL = 'http://gateway.marvel.com/v1/public/';
-const endpoint = 'characters';
-const timestamp = Number(new Date());
-const privateKey = process.env.REACT_APP_PRIVATE_KEY || '';
-const publicKey = process.env.REACT_APP_PUBLIC_KEY || '';
-const hash = md5(timestamp + privateKey + publicKey);
-
 const App: React.FC = () => {
-  const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useState({} as CharactersData);
 
   useEffect(() => {
-    axios
-      .get(
-        `${baseURL}${endpoint}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`,
-      )
-      .then(res => setCharacters(res.data.data.results))
-      .catch(error => console.log(error));
+    const fetchCharacters = async () =>
+      await getCharacters().then((res: CharactersData) => setCharacters(res));
+
+    fetchCharacters();
   }, []);
 
   return (
@@ -33,9 +23,9 @@ const App: React.FC = () => {
 
       <div>
         <ul>
-          {characters &&
-            characters.map((character: any) => {
-              return <li>{character.name}</li>;
+          {characters?.results &&
+            characters?.results.map((character: any) => {
+              return <li key={character.id}>{character.name}</li>;
             })}
         </ul>
       </div>
