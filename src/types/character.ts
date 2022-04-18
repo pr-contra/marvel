@@ -33,12 +33,12 @@ export type Character = {
   urls: Url[];
 };
 
-export type Url = {
+type Url = {
   type: string;
   url: string;
 };
 
-export type Thumbnail = {
+type Thumbnail = {
   extension: string;
   path: string;
 };

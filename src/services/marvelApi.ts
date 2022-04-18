@@ -6,9 +6,15 @@ const marvelApi = axios.create({
   baseURL: 'http://gateway.marvel.com/v1/public/',
 });
 
-export const getCharacters = async (): Promise<CharactersData> =>
+export const getCharacters = async (
+  userSearch: string,
+  page: number,
+  itemsPerPage: number,
+): Promise<CharactersData> =>
   await marvelApi
-    .get<CharactersRequest>(getCharactersEndpoint())
+    .get<CharactersRequest>(
+      getCharactersEndpoint(userSearch, page, itemsPerPage),
+    )
     .then(({ data }) => {
       return data?.data;
     })
