@@ -1,18 +1,13 @@
-import { getTimestamp, getHash } from '../utils';
-
-const publicKey = process.env.REACT_APP_PUBLIC_KEY || '';
-
 export const getCharactersEndpoint = (
   userSearch: string,
   page: number,
   itemsPerPage: number,
 ): string => {
-  const ts = getTimestamp();
-  const hash = getHash();
+  const search = userSearch.trim().toLocaleLowerCase();
 
   return (
-    `/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}` +
+    `/characters?` +
     `&offset=${page}&limit=${itemsPerPage}` +
-    `${userSearch ? `&nameStartsWith=${userSearch}` : ''}`
+    `${search ? `&nameStartsWith=${search}` : ''}`
   );
 };

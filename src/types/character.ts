@@ -9,7 +9,7 @@ export type CharactersRequest = {
   data: CharactersData | void;
   etag: string;
   status: string;
-} | void;
+} | void | null;
 
 export type CharactersData = {
   count: number;
@@ -17,7 +17,7 @@ export type CharactersData = {
   offset: number;
   results?: Character[];
   total: number;
-} | void;
+} | void | null;
 
 export type Character = {
   comics: ResourceList<Resource>;
