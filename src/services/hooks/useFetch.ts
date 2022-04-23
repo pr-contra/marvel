@@ -35,9 +35,8 @@ const useFetch = <T>(url: string): [T, boolean, boolean] => {
         }
       });
     return () => {
-      controller.abort('Cancelling in cleanup');
+      controller.abort('request cancelled - unmount');
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url, marvelApi]);
 
   return [data as T, isLoading, isError];

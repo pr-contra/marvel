@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,UAAU,CAAV,IAAU;EACR,EAAE;IACA,SAAS,EAAE,YAAY;;EAEzB,IAAI;IACF,SAAS,EAAE,cAAc;;;;AAI7B,AAAA,OAAO,CAAC;EACN,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,GAAG;EACR,IAAI,EAAE,GAAG;EACT,SAAS,EAAE,qBAAqB;CASjC;;AAPE,AAAD,aAAO,CAAC;EACN,UAAU,EAAE,GAAG,CAAC,KAAK,CCXZ,OAAO;EDYhB,aAAa,EAAE,GAAG;EAClB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,SAAS,EAAE,yBAAyB;CACrC",
+    "sources": [
+        "loading.scss",
+        "variables/variables.scss"
+    ],
+    "names": [],
+    "file": "loading.css"
+}

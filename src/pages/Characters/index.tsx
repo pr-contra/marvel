@@ -10,9 +10,9 @@ import {
 } from '../../constants';
 import List from '../../components/List';
 import Search from '../../components/Search';
-import '../../styles/characters.css';
 import useFetch from '../../services/hooks/useFetch';
 import { getCharactersEndpoint } from '../../services/endpoints';
+import '../../styles/characters.css';
 
 const Characters = () => {
   const { search } = useLocation();

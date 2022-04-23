@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import { Character, CharactersData } from '../../types/character';
+import Loading from '../common/Loading';
 import Card from './Card';
 
 type ListProps = {
@@ -10,9 +11,9 @@ type ListProps = {
 
 const List = ({ characters, isLoading, isError }: ListProps): ReactElement => {
   return (
-    <div>
+    <>
       {isLoading ? (
-        <div>loading...</div>
+        <Loading />
       ) : isError ? (
         <div>Error</div>
       ) : (
@@ -20,7 +21,7 @@ const List = ({ characters, isLoading, isError }: ListProps): ReactElement => {
           return <Card key={character.id} character={character} />;
         })
       )}
-    </div>
+    </>
   );
 };
 

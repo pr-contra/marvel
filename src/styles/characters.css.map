@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAC;EACJ,aAAa,EAAE,MAAM;CACtB",
+    "sources": [
+        "characters.scss"
+    ],
+    "names": [],
+    "file": "characters.css"
+}
