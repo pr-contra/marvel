@@ -1,0 +1,46 @@
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+}
+
+.pagination__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  margin: 0 0.8rem;
+  padding: 0;
+  background: transparent;
+  outline: none;
+  border: 1px solid #000;
+  border-radius: 50%;
+  -webkit-transition: opacity 300ms ease;
+  transition: opacity 300ms ease;
+  cursor: pointer;
+}
+
+.pagination__button:hover {
+  opacity: 0.3;
+}
+
+.pagination__button:disabled {
+  cursor: default;
+  border: 1px solid;
+  opacity: 0.5;
+}
+/*# sourceMappingURL=index.css.map */

@@ -62,6 +62,8 @@ const Characters = () => {
     setUserSearch('');
   }, []);
 
+  console.log(characters);
+
   return (
     <main className="main">
       <Search
@@ -69,7 +71,14 @@ const Characters = () => {
         handleClear={handleClear}
         userSearch={userSearch}
       />
-      <List characters={characters} isLoading={isLoading} isError={isError} />
+      <List
+        characters={characters}
+        itemsPerPage={itemsPerPage}
+        isLoading={isLoading}
+        isError={isError}
+        setPage={setPage}
+        page={page}
+      />
     </main>
   );
 };
