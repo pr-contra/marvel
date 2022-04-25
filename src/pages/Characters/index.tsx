@@ -22,6 +22,7 @@ const Characters = () => {
   const [userSearch, setUserSearch] = useState<string>(
     query.search ? String(query.search) : '',
   );
+
   const [page, setPage] = useState<number>(() => {
     return isValidNumber(query.page) ? Number(query.page) : DEFAULT_PAGE;
   });
@@ -51,15 +52,21 @@ const Characters = () => {
     }
   }, [characters, isLoading, page, itemsPerPage, userSearch, navigate]);
 
-  const handleSearch = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearch = useCallback((value: string) => {
     setPage(DEFAULT_PAGE);
-    setUserSearch(e.target.value.trim());
+    setUserSearch(value.trim());
+  }, []);
+
+  const handleClear = useCallback(() => {
+    setPage(DEFAULT_PAGE);
+    setUserSearch('');
   }, []);
 
   return (
     <main className="main">
       <Search
         handleSearch={debounce(handleSearch, DEBOUNCE_TIMEOUT)}
+        handleClear={handleClear}
         userSearch={userSearch}
       />
       <List characters={characters} isLoading={isLoading} isError={isError} />

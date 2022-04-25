@@ -4,10 +4,11 @@ export const getCharactersEndpoint = (
   itemsPerPage: number,
 ): string => {
   const search = userSearch.trim().toLocaleLowerCase();
+  const offset = page * itemsPerPage;
 
   return (
     `/characters?` +
-    `&offset=${page}&limit=${itemsPerPage}` +
+    `&offset=${offset}&limit=${itemsPerPage}` +
     `${search ? `&nameStartsWith=${search}` : ''}`
   );
 };

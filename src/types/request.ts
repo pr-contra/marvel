@@ -6,8 +6,8 @@ export interface State<T> {
 
 export interface Action<T> {
   type: requestTypes.REQUESTED | requestTypes.RECEIVED | requestTypes.ERROR;
-  data?: T | null;
-  isError?: boolean;
+  data: T | null;
+  isError: boolean;
 }
 
 export enum requestTypes {

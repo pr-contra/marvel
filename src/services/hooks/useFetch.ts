@@ -44,7 +44,7 @@ const useFetch = <T>(url: string): [T, boolean, boolean] => {
 
 function requestReducer<T>(
   state: State<T> = requestReducer.initialState,
-  action: Action<T>,
+  action: Partial<Action<T>>,
 ): State<T> {
   switch (action.type) {
     case requestTypes.REQUESTED:

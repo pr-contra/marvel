@@ -15,7 +15,7 @@ export type CharactersData = {
   count: number;
   limit: number;
   offset: number;
-  results?: Character[];
+  results: Character[] | null;
   total: number;
 } | void | null;
 
