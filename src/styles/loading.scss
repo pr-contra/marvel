@@ -10,10 +10,8 @@
 }
 
 .loader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 20rem auto 0 auto;
+  width: 40px;
 
   &__icon {
     border-top: 1px solid color(marvelRed);
